@@ -1,0 +1,27 @@
+//gateway <---> server
+syntax = "proto3";
+
+package gs;
+
+
+enum ID {
+	ID_Enum = 0; //
+	//测试
+	ID_G2C_GetInfos = 10000;
+	ID_C2G_GetInfos = 10001;
+}
+
+//字符串map
+message StrMap{
+	string key = 1;
+	string value = 2;
+ }
+
+message G2S_GetInfos{
+	uint64 key = 1;
+}
+message S2G_GetInfos{
+	uint32 ret = 1;
+	repeated StrMap values = 2;
+}
+
